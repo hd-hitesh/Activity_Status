@@ -12,8 +12,6 @@ public class MainActivity extends AppCompatActivity {
 
     private String TAG = "tag";
     private boolean isLoggedIn = true;
-    private boolean isPlaying = true;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

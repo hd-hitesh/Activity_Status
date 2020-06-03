@@ -33,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         Log.d(TAG,"onStart");
+        checkLoginStatus();
+        videoStatus(true);
     }
 
     @Override
@@ -45,12 +47,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         Log.d(TAG,"onPause");
+        isLoggedIn = false;
+        videoStatus(false);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         Log.d(TAG,"onCreate");
+        videoStatus(true);
     }
 
     @Override
@@ -73,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
             Log.d(TAG,"Logged Out");
     }
 
-    private void videoStatus()
+    private void videoStatus(boolean isPlaying)
     {
         if (isPlaying){
             Log.d(TAG,"Video Playing");
